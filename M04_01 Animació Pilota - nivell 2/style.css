@@ -15,38 +15,48 @@
   padding: 0px;
   top: 20px;
   left: 0px;             
-  animation: movimiento 9s ease-in-out 1s infinite alternate;      
+  animation: movimiento-vertical 1s infinite alternate, movimiento-horizontal 3s infinite ease-in-out alternate;
 }
 
-@keyframes movimiento {
-   0% {
-    transform: translate(0px,0px);
-      }
 
-  25% {
-    transform: translate(50px, 495px);
-      }
-
-  50% {
-       transform: translate(250px, 100px);
-       transform: scale(1,0.7);
-       }
-       
-  65% {
-      transform: translate(400px,500px);
-      }
- 
-  75% {
-       transform: translate(500px, 250px);
-       transform: scale(1,0.7);
-       }
-
-  85% {
-        transform: translate(200px, 500px);
-      }
-
-  100% {
-       transform: translate(0px, 0px);
-       transform: scale(0.7,1);
-       }
+@keyframes movimiento-vertical {
+   
+    from {
+      top: 0px;
     }
+    25% {
+      top: 520px;
+      transform: scale(1,0.7);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    50% {
+      top:300px;
+      transform: scale(1,1);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        }
+    75%{
+      top: 300px;
+      transform: scale(1,1);
+  
+    }
+    to {
+      top: 520px; 
+      transform: scale(1,0.7);
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);}
+    }
+    
+@keyframes movimiento-horizontal{
+    from {left: 0; 
+  }
+  25% {
+    left: 150px;
+  }
+  50% {
+    left:250px;
+  }
+  75% {
+    left:350px;
+  }
+  to {left: 500px; 
+  }
+}
